@@ -10,7 +10,9 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, open terminal and run:
+
+### `cp .env.sample .env`
 
 ### `npm start`
 
