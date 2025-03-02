@@ -35,7 +35,8 @@ const App = () => {
   }, [city, country]);
 
   useEffect(() => {
-    const savedHistory = JSON.parse(localStorage.getItem("weatherHistory")) || [];
+    // To persist history data
+    const savedHistory = JSON.parse(localStorage.getItem("weatherHistory")) || []; 
     setHistory(savedHistory);
   }, []);
 

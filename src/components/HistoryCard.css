@@ -1,3 +1,5 @@
+/* Search history display */
+
 .history-card {
     display: flex;
     flex-direction: column;
@@ -35,10 +37,8 @@
     justify-content: space-between;
 }
 
-@media (max-width: 800px) {
-    /*.history-row {*/
-    /*    flex-direction: column;*/
-    /*}*/
+/* Small devices (phones, less than 768px) */
+@media (max-width: 768px) {
     .history-row-text {
         flex-direction: column;
     }

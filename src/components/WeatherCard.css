@@ -26,13 +26,19 @@
   justify-content: space-between;
 }
 
+/* Small devices (phones, less than 768px) */
 @media (max-width: 768px) {
   .weather-specifics {
     position: relative;
     align-items: flex-end;
     flex-direction: column-reverse;
+    justify-content: end;
   }
   .weather-icon {
+    position: absolute;
     width: 52%;
+    top: 25%; 
+    left: 45%;
+    transform: translateY(-50%);
   }
 }
