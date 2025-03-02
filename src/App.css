@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+/* Light and dark theme styles */
+[data-theme="light"] {
+  --bg-image: url("./assets//bg-light.png");
+  --content-container-bg-color: rgba(255, 255, 255, 0.2);
+  --content-container-border: 1px solid rgba(255, 255, 255, 0.5);
+  --p-text-color: black;
+  --h1-text-color: rgba(108, 64, 181, 1);
+  --input-bg: rgba(255, 255, 255, 0.2);
+  --input-button-bg: rgba(108, 64, 181, 1);
+  --input-button-color: white;
+  --content-action-color: black;
+  --content-action-button-bg-color: white;
+  --content-action-button-border: none;
+  --content-action-button-box-shadow:  0 2px 5px rgba(0, 0, 0, 0.2);
+  --placeholder-color: rgba(0, 0, 0, 0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme="dark"] {
+  --bg-image: url("./assets/bg-dark.png");
+  --content-container-bg-color: rgba(26, 26, 26, 0.2);
+  --content-container-border: none;
+  --p-text-color: white;
+  --h1-text-color: white;
+  --input-bg: rgba(26, 26, 26, 0.5);
+  --input-button-bg: rgba(40, 18, 77, 1);
+  --input-button-color: white;
+  --content-action-color: rgba(255, 255, 255, 0.5);
+  --content-action-button-bg-color: none;
+  --content-action-button-border: 1px solid rgba(255, 255, 255, 0.5);
+  --content-action-button-box-shadow: none;
+  --placeholder-color: rgba(234, 234, 238, 0.322);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* General Styles */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: var(--bg-image);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: var(--p-text-color)
+}
+
+h1 {
+  font-size: 81px;
+  color: var(--h1-text-color);
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+label {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  outline: none !important;
+  border: none !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+  color: inherit !important;
+
+}
+
+.icon-button { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; 
+  height: 24px;
+  border-radius: 50%;
+  background:  var(--content-action-button-bg-color);
+  box-shadow: var(--content-action-button-box-shadow);
+  border: var(--content-action-button-border);
+  color: var(--content-action-color);
+  cursor: pointer;
+  margin: 2px;
+}
+
+/* Container Styling */
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: transparent;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Content */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px 24px 0 0; 
+  background-color:  var(--content-container-bg-color);
+  border: var(--content-container-border);
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+}
+
+
+/* Input and Button */
+.input-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  width: 100%;
+  max-width: 700px;
+}
+
+
+.input-wrapper {
+  display: flex;
+  height: 60px;
+  width: 700px;
+  align-items: center;
+
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 20px;
+  padding: 2px 12px;
+  height: 45px;
+  width: 100%;
+  margin-right: 10px;
+  background-color: var(--input-bg);
+
+}
+
+.input-label {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.styled-input  {
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+.styled-input::placeholder {
+  color: var(--placeholder-color)
+}
+
+.input-actions {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: right;
+  color: var(--content-action-color);
+}
+
+.input-icon-button {
+  border-radius: 16px;
+  width: 45px;
+  height:45px;
+  background-color: var(--input-button-bg);
+  color:  var(--input-button-color);
+  border: none
+}
+
+
+.error {
+  text-align: left;
+  padding: 2px 12px;
+  margin-top: 2px;
+  color: brown;
 }

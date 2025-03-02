@@ -1,0 +1,26 @@
+
+/* Weather display */
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 24px;
+}
+
+.weather-icon {
+  position: absolute;
+  top: 25%; 
+  left: 52%;
+  max-width: 300px; 
+  transform: translateY(-50%);
+}
+
+
+.location {
+  font-weight: bold;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+}
