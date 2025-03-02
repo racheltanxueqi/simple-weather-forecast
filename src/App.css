@@ -194,3 +194,29 @@ input:-webkit-autofill:active {
   margin-top: 2px;
   color: brown;
 }
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 768px) {
+  p {
+    font-size: 12px;
+  }
+  .input-container {
+    width: 94vw;
+  }
+  .input-wrapper {
+    width: 94vw;
+  }
+  .input-field {
+    width: 30%;
+  }
+  .input-icon-button {
+    width: 32px;
+    height: 32px;
+  }
+  .container {
+    width: 100vw;
+  }
+  .content-container {
+    width: 94vw;
+  }
+}

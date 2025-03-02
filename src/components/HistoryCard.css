@@ -27,3 +27,22 @@
     justify-content: right;
     color: var(--content-action-color);
 }
+
+.history-row-text {
+    display: flex;
+    flex-grow: 23;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (max-width: 800px) {
+    /*.history-row {*/
+    /*    flex-direction: column;*/
+    /*}*/
+    .history-row-text {
+        flex-direction: column;
+    }
+    .history-city {
+        font-weight: bolder;
+    }
+}
