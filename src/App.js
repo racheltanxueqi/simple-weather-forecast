@@ -5,7 +5,7 @@ import "./App.css";
 import WeatherCard from "./components/WeatherCard";
 import HistoryCard from "./components/HistoryCard"
 import { IconButton } from "./components/IconButton"
-import { FaCross, FaCrosshairs, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 
 const App = () => {
